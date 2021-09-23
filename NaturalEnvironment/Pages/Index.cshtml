@@ -1,10 +1,55 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "The environment";
+}
+<div class="text-center">
+    <h2>Save the Environment!</h2>
+    <p>Current Time: @Model.todaysDate</p>
+</div>
+
+@{
+    var quote ="BE A PART OF THE SOLUTION, NOT PART OF THE POLLUTION.";
+
+}
+<div>@quote</div><br>
+
+@{
+    var problem_based = new [] {
+        new {
+            problem = "Air pollution and climate change.",
+            soltion = "Replace fossil fuels with renewable energy. Reduce emissions from agriculture.",
+            impact = "CO2 level will decrease, resulting in clear air."
+        },
+        new {
+            problem = "Deforestation.",
+            soltion = "Restore degraded areas by replanting with native tree species.",
+            impact = "Natural forests act as biodiversity reserves, they are also carbon sinks, keeping carbon out of the atmosphere and oceans."
+        },
+        new {
+            problem = "Species extinction.",
+            soltion = "Concerted efforts need to be made to prevent further loss of biodiversity. ",
+            impact = "This should be done in partnership with locals, so that wildlife conservation is in their social and economic interest."
+        },
+        new {
+            problem = "Soil degradation.",
+            soltion = "A wide range of soil conservation and restoration techniques exist, from no-till agriculture to crop rotation to water-retention through terrace-building.",
+            impact = "About 12 million hectares of farmland a year get seriously degraded, according to UN estimates. This can be saved by the solutions stated above."
+        },
+        new {            
+            problem = "Overpopulation.",
+            soltion = "Women should gain access to education and basic social services, the average number of births per woman drops precipitously.",
+            impact = "Networked aid systems could bring women out of extreme poverty, even in countries where state-level governance remains abysmal."
+        }
+    };
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@for (var i = 0; i < problem_based.Length; i++)
+{
+    var problems = problem_based[i];
+    var soltions = problem_based[i];
+    var impacts = problem_based[i];
+    <text><em>Problems caused to Environment</em> : <strong>@problems.problem</strong><br></text>
+    <text><em>Solutions for the problems</em>: @soltions.soltion<br></text>
+    <text><em>Imapct by these changes</em>: @impacts.impact<br></text><br>
+}
