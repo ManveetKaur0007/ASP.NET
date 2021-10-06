@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using RazorPagesEnvironment.Models;
+using NaturalEnvironment.Models;
 
 namespace NaturalEnvironment.Pages_Environments
 {
     public class CreateModel : PageModel
     {
-        private readonly RazorPagesNaturalEnvironmentContext _context;
+        private readonly NaturalEnvironmentContext _context;
 
-        public CreateModel(RazorPagesNaturalEnvironmentContext context)
+        public CreateModel(NaturalEnvironmentContext context)
         {
             _context = context;
         }

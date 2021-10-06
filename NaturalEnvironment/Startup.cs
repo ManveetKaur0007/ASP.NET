@@ -14,26 +14,34 @@ namespace NaturalEnvironment
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
+        { 
+            Environment = enc;
             Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
+        public IWebHostEnvironment Environment{get;}
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            if (Environment.IsDevelopment())
+            {
+                services.AddDbContext<NaturalEnvironmentContext>(options =>
+                options.UseSqlite(Configuration.GetConnectionString("NaturalEnvironmentContext")));
+            }
+            else{
+                services.AddDbContext<NaturalEnvironmentContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("NaturalEnvironmentContext")));
+            }
             services.AddRazorPages();
-
-            services.AddDbContext<RazorPagesNaturalEnvironmentContext>(options =>
-                    options.UseSqlite(Configuration.GetConnectionString("RazorPagesNaturalEnvironmentContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            if (Environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
@@ -49,7 +57,7 @@ namespace NaturalEnvironment
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            // app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

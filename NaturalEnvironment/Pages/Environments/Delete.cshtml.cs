@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesEnvironment.Models;
+using NaturalEnvironment.Models;
 
 namespace NaturalEnvironment.Pages_Environments
 {
     public class DeleteModel : PageModel
     {
-        private readonly RazorPagesNaturalEnvironmentContext _context;
+        private readonly NaturalEnvironmentContext _context;
 
-        public DeleteModel(RazorPagesNaturalEnvironmentContext context)
+        public DeleteModel(NaturalEnvironmentContext context)
         {
             _context = context;
         }

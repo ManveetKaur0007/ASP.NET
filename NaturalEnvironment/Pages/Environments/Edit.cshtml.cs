@@ -6,15 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesEnvironment.Models;
+using NaturalEnvironment.Models;
 
 namespace NaturalEnvironment.Pages_Environments
 {
     public class EditModel : PageModel
     {
-        private readonly RazorPagesNaturalEnvironmentContext _context;
+        private readonly NaturalEnvironmentContext _context;
 
-        public EditModel(RazorPagesNaturalEnvironmentContext context)
+        public EditModel(NaturalEnvironmentContext context)
         {
             _context = context;
         }
