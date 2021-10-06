@@ -7,13 +7,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using NaturalEnvironment.Models;
 
-namespace NaturalEnvironment.Pages_Environments
+namespace RazorPagesNaturalEnvironment.Pages.Environments
 {
     public class IndexModel : PageModel
     {
-        private readonly NaturalEnvironmentContext _context;
+        private readonly RazorPagesNaturalEnvironment.Data.RazorPagesContextNaturalEnvironment _context;
 
-        public IndexModel(NaturalEnvironmentContext context)
+        public IndexModel(RazorPagesNaturalEnvironment.Data.RazorPagesContextNaturalEnvironment context)
         {
             _context = context;
         }

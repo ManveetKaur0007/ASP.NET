@@ -16,7 +16,7 @@ namespace NaturalEnvironment
     {
         public Startup(IConfiguration configuration, IWebHostEnvironment env)
         { 
-            Environment = enc;
+            Environment = env;
             Configuration = configuration;
         }
 
@@ -36,6 +36,9 @@ namespace NaturalEnvironment
                 options.UseSqlServer(Configuration.GetConnectionString("NaturalEnvironmentContext")));
             }
             services.AddRazorPages();
+
+            services.AddDbContext<RazorPagesNaturalEnvironmentContext>(options =>
+            options.UseSqlite(Configuration.GetConnectionString("RazorPagesNaturalEnvironmentContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

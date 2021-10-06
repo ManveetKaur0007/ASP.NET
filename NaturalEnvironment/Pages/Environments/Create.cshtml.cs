@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using NaturalEnvironment.Models;
 
-namespace NaturalEnvironment.Pages_Environments
+namespace RazorpagesNaturalEnvironment.Pages.Environments
 {
     public class CreateModel : PageModel
     {
