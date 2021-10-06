@@ -25,7 +25,7 @@ namespace RazorPagesNaturalEnvironment.Models
                         Country = "Mongolia",
                         Pollutionrate = 91.84,
                         Currentstatus = "Worst",
-                        Effectonpeople = ""
+                        Effectonpeople = "Bad weather and high heat waves"
                     },
 
                     new NaturalEnvironment
@@ -33,7 +33,7 @@ namespace RazorPagesNaturalEnvironment.Models
                         Country = "Cameroon",
                         Pollutionrate = 90.12,
                         Currentstatus = "Worst",
-                        Effectonpeople = "Poor air quality"
+                        Effectonpeople = "Poor air quality with Bad water"
                     },
 
                     new NaturalEnvironment
